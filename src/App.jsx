@@ -5,6 +5,7 @@ import About from './components/About'
 import Contact from './components/Contact'
 import NavBar from './components/NavBar'
 import Mapa from './components/Mapa'
+import MapaRuta from './components/MapaRuta'
 import './App.css'
 
 
@@ -24,6 +25,7 @@ function App() {
         <Route path="/about" element={<About/>} />
         <Route path="/contact" element={<Contact/>} />
         <Route path="/mapa" element={<Mapa/>} />
+        <Route path="/mapaRuta" element={<MapaRuta/>} />
       </Routes>
     </div>
     </>

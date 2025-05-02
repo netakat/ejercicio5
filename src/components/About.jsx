@@ -7,20 +7,20 @@ function About(){
     return(
         <Container maxWidth="md" sx={{textAlign: "center", mt:5}}>
             {}
-            <Typography variant="h2" gutterBotton>
+            <Typography variant="h2" gutterBottom>
                 Información
             </Typography>
             <br/>
             {}
-            <Typography variant="h5" gutterBotton>
+            <Typography variant="h5" gutterBottom>
                 Katherine Galilea Guardado Garza
             </Typography>
             {}
-            <Typography variant="h5" gutterBotton>
+            <Typography variant="h5" gutterBottom>
                 Facultad de Informática Mazatlán
             </Typography>
             {}
-            <Typography variant="h5" gutterBotton>
+            <Typography variant="h5" gutterBottom>
                 c:
             </Typography>
             <br/>

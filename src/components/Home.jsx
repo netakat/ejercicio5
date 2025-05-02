@@ -9,7 +9,7 @@ function Home(){
     return (
         <Container maxWidth="md" sx={{textAlign: "center", mt:5}}>
             {}
-            <Typography variant="h2" gutterBotton>
+            <Typography variant="h2" gutterBottom>
                 Guten Morgen c:
             </Typography>
             <br/>
