@@ -52,7 +52,7 @@ const MapaConRuta = () => {
     <Container maxWidth="md" sx={{ mt: 4 }}>
       <Box sx={{ mb: 2 }}>
         <Typography variant="h5" component="h2" gutterBottom>
-          Ruta desde Ciudad de México hasta Ecatepec
+          Ruta desde FIMAZ a Plazuela Machado
         </Typography>
       </Box>
 
