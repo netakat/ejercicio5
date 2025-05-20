@@ -7,6 +7,7 @@ import NavBar from './components/NavBar'
 import Mapa from './components/Mapa'
 import MapaRuta from './components/MapaRuta'
 import MapaConClusters from './components/MapaConClusters'
+import MapaConDrawing from './components/MapaConDrawing'
 import './App.css'
 
 
@@ -28,6 +29,7 @@ function App() {
         <Route path="/mapa" element={<Mapa/>} />
         <Route path="/mapaRuta" element={<MapaRuta/>} />
         <Route path="/mapaCluster" element={<MapaConClusters/>} />
+        <Route path="/mapaDrawing" element={<MapaConDrawing/>} />
       </Routes>
     </div>
     </>

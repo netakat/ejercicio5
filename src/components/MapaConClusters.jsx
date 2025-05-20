@@ -34,7 +34,7 @@ const MapaConClusters = () => {
         <Container maxWidth="md" sx={{ textAlign: "center", mt: 5 }}>
             <Box sx={{
                 mb: 2,
-                width: "500%",
+                width: "500px",
                 p: 6, 
                 boxShadow: 3,
                 borderRadius: 4,
