@@ -14,8 +14,8 @@ const center = {
 
 const MapContainer = () => {
     const [controlPosition, setControlPosition] = useState(null);
-    const [shapes, setShapes] = useState([]); // Para guardar coordenadas
-    const drawnShapesRef = useRef([]); // Para guardar objetos de Google Maps y poder eliminarlos
+    const [shapes, setShapes] = useState([]); 
+    const drawnShapesRef = useRef([]); 
 
     const handleMapLoad = () => {
         if (window.google) {
@@ -31,10 +31,8 @@ const MapContainer = () => {
                 lng: coord.lng()
             }));
 
-            // Guardar coordenadas
             setShapes(prev => [...prev, path]);
 
-            // Guardar objeto en el ref para poder eliminarlo después
             drawnShapesRef.current.push(polygon);
         } else {
             console.warn("No se pudo obtener el path del polígono.");
@@ -50,7 +48,7 @@ const MapContainer = () => {
     return (
         <Container maxWidth={false} sx={{ px:0, mt: 5}}>
             <Box sx={{ display: 'flex',justifyContent:"flex-start", width: "800px", gap: 2 }}>
-                {/* Panel del mapa */}
+                
                 <Box sx={{
                     flex: 50,
                     p: 2,
@@ -84,7 +82,7 @@ const MapContainer = () => {
                     </LoadScript>
                 </Box>
 
-                {/* Panel lateral */}
+                
                 <Box sx={{
                     flex: 30,
                     p: 2,
