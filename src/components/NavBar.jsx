@@ -30,6 +30,9 @@ function NavBar(){
                 <Button color="inherit" component={Link}to="/mapaDrawing">
                     Mapa Drawing
                 </Button>
+                <Button color="inherit" component={Link}to="/routesAPI">
+                    Routes API
+                </Button>
             </Toolbar>
         </AppBar>
     );
