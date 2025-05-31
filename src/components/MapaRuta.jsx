@@ -1,17 +1,13 @@
 // MapaConRuta.jsx
 import React, { useState, useEffect } from "react";
-import {
-  GoogleMap,
-  Marker,
-  DirectionsRenderer,
-  useJsApiLoader,
-} from "@react-google-maps/api";
-import { Container, Box, Typography } from "@mui/material";
+import { GoogleMap, Marker, DirectionsRenderer, useJsApiLoader } from "@react-google-maps/api";
+import { Container, Box, Typography, Button } from "@mui/material";
+import { useNavigate } from 'react-router-dom';
 
 // Estilos del contenedor del mapa
 const containerStyle = {
-  width: "100%",
-  height: "500px",
+  width: "33vw",
+  height: "600px",
 };
 
 // Coordenadas de origen y destino
@@ -25,6 +21,7 @@ const MapaConRuta = () => {
     libraries,
   });
 
+  const navigate = useNavigate();
   const [directions, setDirections] = useState(null);
 
   useEffect(() => {
@@ -49,34 +46,111 @@ const MapaConRuta = () => {
   }, [isLoaded]);
 
   return (
-    <Container maxWidth="md" sx={{ mt: 4 }}>
-      <Box sx={{ mb: 2 }}>
-        <Typography variant="h5" component="h2" gutterBottom>
-          Ruta desde FIMAZ a Plazuela Machado
-        </Typography>
-      </Box>
+    <Container maxWidth={false}>
 
-      {isLoaded ? (
-        <GoogleMap
-          mapContainerStyle={containerStyle}
-          center={origen}
-          zoom={10}
-        >
-          {directions && (
-            <DirectionsRenderer
-              options={{
-                directions: directions,
-              }}
-            />
+      <Box sx={{
+        display: 'flex',
+        gap: 2,
+        justifyContent: 'center',
+      }}>
+
+        <Box sx={{
+          mb: 2,
+          width: "500px",
+          p: 6,
+          boxShadow: 3,
+          borderRadius: 4,
+          backgroundColor: "#f5f5f5"
+        }}>
+
+          <Typography variant="h5" gutterBottom>
+            Generar direcciones en Google Maps
+          </Typography>
+          <br />
+          { }
+          <Typography variant="h6" gutterBottom>
+            Ruta desde Fimaz a la PLazuela Machado
+          </Typography>
+          <br />
+          { }
+
+          {isLoaded ? (
+            <GoogleMap
+              mapContainerStyle={containerStyle}
+              center={origen}
+              zoom={13}
+            >
+              {directions && (
+                <DirectionsRenderer
+                  options={{
+                    directions: directions,
+                  }}
+                />
+              )}
+
+              <Marker position={origen} label="A" />
+              <Marker position={destino} label="B" />
+            </GoogleMap>
+          ) : (
+            <Typography>Cargando mapa ...</Typography>
           )}
 
-          <Marker position={origen} label="A" />
-          <Marker position={destino} label="B" />
-        </GoogleMap>
-      ) : (
-        <Typography>Cargando mapa ...</Typography>
-      )}
-    </Container>
+        </Box>
+
+        <Box sx={{
+          mb: 2,
+          width: "500px",
+          p: 6,
+          boxShadow: 3,
+          borderRadius: 4,
+          backgroundColor: "#f5f5f5"
+        }}>
+
+          <Typography variant="h5" gutterBottom>
+            Explicación
+          </Typography>
+          <br />
+          { }
+          <Typography variant="p" gutterBottom>
+            Se agregó una API de google maps a un proyecto con Vite y React, que mostrará una ruta entre dos puntos, en este caso,
+            el punto de origen es la Facultad de Informática Mazatlán y el punto de destino es la Plazuela Machado.
+          </Typography>
+          <br /><br />
+          { }
+          <Typography variant="p" gutterBottom>
+            Utilicé la librería de mui/material, para poder importar las herramientas Container, Box, Typography y Button,
+            para poder mostrar la actividad ordenadamente.
+            También usé la librería de react-google-maps/api, para importar las herramientas de Google Map, Marker, DirectionsRenderer y
+            useJsApiLoader, las cuales fueron necesarias para poder mostrar el mapa de google maps, con ambos destinos visualmente llamativos
+            con las letras A y B, gracias a la herramienta Marker, así como la herramienta DirectionsRenderer para poder marcar la ruta entre los
+            puntos mencionados, por último la herramienta useJsApiLoader para poder validar si la API ya fue cargada, de no ser así, que cargue la
+            API.
+          </Typography>
+          <br /><br />
+          { }
+          <Typography variant="p" gutterBottom>
+            En esta actividad, reforcé mis conocimientos en el uso de componentes para organizar y dar estilo a la interfaz de manera clara.
+            También, aprendí a trazar una ruta entre distintos puntos dentro del mapa, usando integraciones externas de servicios en el proyecto 
+            con React.
+          </Typography>
+          <br /><br />
+          { }
+
+          <Button variant="contained" onClick={() => navigate("/")} sx={{
+            backgroundColor: "#1e8d96",
+            color: "#fff",
+            '&:hover': {
+              backgroundColor: "#1b7b83"
+            }
+          }}>
+            Inicio
+          </Button>
+
+        </Box>
+
+      </Box>
+
+    </Container >
   );
 };
 

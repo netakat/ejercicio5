@@ -6,6 +6,10 @@ function NavBar(){
     return (
         <AppBar>
             <Toolbar>
+                <Button color="inherit" component={Link}to="/">
+                    KAT 🌸
+                </Button>
+                {/*}
                 <Typography>
                     KAT 🌸
                 </Typography>
@@ -18,6 +22,7 @@ function NavBar(){
                 <Button color="inherit" component={Link}to="/contact">
                     Contacto
                 </Button>
+                */}
                 <Button color="inherit" component={Link}to="/mapa">
                     Mapa
                 </Button>
