@@ -95,7 +95,7 @@ function Mapa() {
                         En esta actividad, aprendí a integrar una API en un proyecto con Vite y React, también al uso de librerías
                         especializadas en React y saber estructurar componentes visuales.
                     </Typography>
-                    <br />
+                    <br /><br />
                     { }
 
                     <Button variant="contained" onClick={() => navigate("/")} sx={{
